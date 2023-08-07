@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# change directory
+cd /config/dynamic_blacklists
+
 #Backup previous list
 rm -f BLACKLIST_OLD.txt
 mv BLACKLIST.txt BLACKLIST_OLD.txt
