@@ -9,7 +9,7 @@ mv BLACKLIST.txt BLACKLIST_OLD.txt
 touch BLACKLIST.txt
 
 #Download the file from PGL.YOYO
-curl -O https://pgl.yoyo.org/adservers/iplist.php
+#curl -O https://pgl.yoyo.org/adservers/iplist.php
 #Download the file from emerging threats
 curl -O http://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt
 #Download the first file from SpamHaus
@@ -33,7 +33,6 @@ curl -L https://www.talosintelligence.com/documents/ip-blacklist >> ip-blacklist
 cat all.txt \
     drop.txt \
     edrop.txt \
-    iplist.php \
     sinokoreacidr.txt \
     chinacidr.txt \
     latest_blacklist.txt \
