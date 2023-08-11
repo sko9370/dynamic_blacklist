@@ -27,7 +27,7 @@ curl -O http://lists.blocklist.de/lists/all.txt
 #Download bogon blacklist from cymru.org
 curl -O http://www.team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 #Download blacklist from Cisco/Talos
-curl -L https://www.talosintelligence.com/documents/ip-blacklist >> ip-blacklist.txt
+curl -L https://www.talosintelligence.com/documents/ip-blacklist > ip-blacklist.txt
 
 #Combine lists into one file
 cat all.txt \
@@ -74,7 +74,7 @@ cat <<EOF
 EOF
 
 # pre-write command suffixes for adding network ranges
-cat /config/dynamic_blacklists/BLACKLIST.txt|egrep '^[0-9]'|egrep '/' |sed -e "s/^/-A geotmp /"
+cat /config/dynamic_blacklists/BLACKLIST.txt|egrep '^[0-9]'|egrep '/' | egrep -v '^/' |sed -e "s/^/-A geotmp /"
 }
 
 getnetblocks > /config/dynamic_blacklists/netblock.txt
